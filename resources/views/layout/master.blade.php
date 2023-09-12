@@ -7,10 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Dashboard</h1>
     
-    {{$user}}
-    <br>
-    {{$user->email}}
+    @yield('content')
 
 </body>
 </html>
