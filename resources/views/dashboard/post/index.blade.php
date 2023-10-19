@@ -26,7 +26,7 @@
                     {{$post->title}}
                 </td>
                 <td>
-                    Categoria
+                    {{$post->category->title}}
                 </td>
                 <td>
                     {{$post->posted}}

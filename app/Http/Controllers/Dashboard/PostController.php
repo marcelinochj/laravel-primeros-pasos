@@ -45,7 +45,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
-        //
+        return view('dashboard.post.show', compact('post'));
     }
 
     /**
@@ -62,8 +62,14 @@ class PostController extends Controller
      */
     public function update(PutRequest $request, Post $post)
     {
-        $post->update($request->validated());
-        return to_route("post.index");
+        $data = $request->validated();
+        if (isset($data["image"])) {
+            $data["image"] = $filename = time() . "." . $data["image"]->extension();
+            $request->image->move(public_path("image"), $filename);
+        }
+
+        $post->update($data);
+        return to_route("post.index")->with('status', "Registro actualizado");
     }
 
     /**
