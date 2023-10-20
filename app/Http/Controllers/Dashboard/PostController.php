@@ -81,6 +81,6 @@ class PostController extends Controller
     public function destroy(Post $post): RedirectResponse
     {
         $post->delete();
-        return to_route("post.index")->with('Estatus', "Registro Elinado");;
+        return to_route("post.index");
     }
 }
