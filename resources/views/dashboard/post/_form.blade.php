@@ -30,4 +30,4 @@
     <input class="form-control" type="file" name = "image"> 
 @endif
 
-<button type="submit">Enviar</button>
+<button class="btn btn-succes my-2" type="submit">Enviar</button>
